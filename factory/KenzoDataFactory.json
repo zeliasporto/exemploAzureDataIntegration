@@ -1,0 +1,9 @@
+{
+	"name": "KenzoDataFactory",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "1f66d27e-a916-402a-ae85-0119794ecdec",
+		"tenantId": "bb71d943-080d-4302-b491-1f5adad5706a"
+	}
+}
