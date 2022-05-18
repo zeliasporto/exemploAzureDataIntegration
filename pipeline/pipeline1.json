@@ -40,10 +40,11 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('CarlocaIngestion').output",
+						"value": "@activity('Lookup1').output.value",
 						"type": "Expression"
 					},
-					"isSequential": true,
+					"isSequential": false,
+					"batchCount": 1,
 					"activities": [
 						{
 							"name": "Copy data1",
@@ -86,7 +87,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"tablename": {
-											"value": "@activity('Lookup1').output",
+											"value": "@activity('Lookup1').output.value",
 											"type": "Expression"
 										}
 									}
@@ -99,7 +100,7 @@
 									"parameters": {
 										"container": "ingestion",
 										"folder": "carloca",
-										"file": "@CONCAT(item(),'.parquet')"
+										"file": "@CONCAT(item().value,'.parquet')"
 									}
 								}
 							]
