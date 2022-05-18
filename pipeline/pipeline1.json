@@ -87,7 +87,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"tablename": {
-											"value": "@activity('Lookup1').output.value",
+											"value": "@item().TABLE_NAME",
 											"type": "Expression"
 										}
 									}
@@ -100,7 +100,7 @@
 									"parameters": {
 										"container": "ingestion",
 										"folder": "carloca",
-										"file": "@CONCAT(item().value,'.parquet')"
+										"file": "@CONCAT(item().tablename.value,'.parquet')"
 									}
 								}
 							]
